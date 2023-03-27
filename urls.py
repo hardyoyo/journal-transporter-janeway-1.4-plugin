@@ -1,6 +1,7 @@
 from django.conf.urls import url, include
 
 from rest_framework.routers import DefaultRouter
+from rest_framework.schemas import get_schema_view
 
 from plugins.journal_transporter import views
 
@@ -180,5 +181,8 @@ user_routes = router.register(r'users', views.UserViewSet)
 # Apply routers to URL patterns
 urlpatterns = [
     url(r'^', include(router.urls)),
+    url(r'^schema/$', get_schema_view(title="Journal Transporter Janeway API", description="API for Journal Transporter Janeway", version="0.0.1"), name='openapi-schema'),
+    url(r'^swagger_ui/$', views.swagger_ui, name='swagger_ui'),
+    url(r'^redoc/$', views.redoc, name='redoc'),
     url(r'^manager', views.manager, name="transporter_manager")
 ]

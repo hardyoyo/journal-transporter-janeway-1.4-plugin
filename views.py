@@ -53,6 +53,22 @@ class NestedViewSetMixin:
 def manager(request):
     return HttpResponse("OH HI")
 
+def swagger_ui(request):
+    template = 'apis/swagger_ui.html'
+    context = {
+        'schema_url':'openapi-schema'
+    }
+
+    return render(request, template, context)
+
+def redoc(request):
+    template = 'apis/redoc.html'
+    context = {
+        'schema_url':'openapi-schema'
+    }
+
+    return render(request, template, context)
+
 
 class TransporterViewSet(NestedViewSetMixin, viewsets.ModelViewSet):
     http_method_names = ['get', 'post']
