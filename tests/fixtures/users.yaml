@@ -1,0 +1,33 @@
+# users.yaml
+
+- model: auth.user
+  pk: 1
+  fields:
+    username: valid_user
+    email: validuser@example.com
+    first_name: Imma
+    last_name: Perfect
+
+- model: auth.user
+  pk: 2
+  fields:
+    username: invalid_user_missing_email
+    email: ''
+    first_name: John
+    last_name: Doe
+
+- model: auth.user
+  pk: 3
+  fields:
+    username: invalid_user_missing_first_name
+    email: testuser2@example.com
+    first_name: ''
+    last_name: Smith
+
+- model: auth.user
+  pk: 4
+  fields:
+    username: invalid_user_missing_last_name
+    email: testuser3@example.com
+    first_name: Alice
+    last_name: ''

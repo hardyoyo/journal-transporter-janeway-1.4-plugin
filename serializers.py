@@ -11,7 +11,7 @@ from django.contrib.contenttypes.models import ContentType
 from rest_framework.serializers import (ModelSerializer, SerializerMethodField, CharField,
                                         IntegerField, DateTimeField, DateField, EmailField, FileField,
                                         SlugRelatedField, BooleanField, ListField)
-
+# TODO: use the full path to journal.models, submission.models, etc.
 from journal.models import ArticleOrdering, Issue, IssueType, Journal, SectionOrdering
 from submission import models as submission_models
 from submission.models import (Article, ArticleAuthorOrder, Field, FieldAnswer, FrozenAuthor,
