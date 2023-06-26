@@ -1,6 +1,6 @@
 import json
 import textwrap
-
+from core.model_utils import(AbstractSiteModel, AbstractLastModifiedModel)
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 

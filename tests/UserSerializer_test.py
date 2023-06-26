@@ -1,18 +1,19 @@
-# import sys
 import yaml
 from django.test import TestCase
+from core.model_utils import(AbstractSiteModel, AbstractLastModifiedModel)
 from django.contrib.auth.models import User
-# print(f">>>>>>>>> sys.path = {sys.path}")
 from serializers import UserSerializer
+
 
 class UserSerializerTest(TestCase):
 
     def setUp(self):
         
-        with open('fixtures/users.yaml') as file:
+        with open('./fixtures/users.yaml') as file:
             self.fixture_data = yaml.load(file, Loader=yaml.FullLoader)
 
     def test_user_serializer_valid_user(self):
+
         valid_user_data = self.fixture_data['valid_user']
         
         serializer = UserSerializer(data=valid_user_data)
